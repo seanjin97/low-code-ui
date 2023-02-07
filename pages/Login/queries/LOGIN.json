@@ -7,7 +7,7 @@
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "https://n8n.gobusiness.io"
+        "url": "http://keycloak:8080"
       },
       "invalids": [],
       "messages": [],
@@ -20,17 +20,34 @@
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
-      "path": "/webhook/sean/login",
+      "path": "/realms/hasura-app/protocol/openid-connect/token",
       "headers": [
         {
           "key": "content-type",
-          "value": "application/json"
+          "value": "application/x-www-form-urlencoded"
         }
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "{\n\t\"username\": {{Username.text}},\n\t\"password\": {{Password.text}}\n}",
-      "bodyFormData": [],
+      "body": "",
+      "bodyFormData": [
+        {
+          "key": "username",
+          "value": "{{Username.text}}"
+        },
+        {
+          "key": "password",
+          "value": "{{Username.text}}"
+        },
+        {
+          "key": "grant_type",
+          "value": "password"
+        },
+        {
+          "key": "client_id",
+          "value": "hasura"
+        }
+      ],
       "httpMethod": "POST",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
@@ -39,20 +56,22 @@
         }
       ],
       "formData": {
-        "apiContentType": "application/json"
+        "apiContentType": "application/x-www-form-urlencoded"
       }
     },
     "executeOnLoad": false,
     "dynamicBindingPathList": [
       {
-        "key": "body"
+        "key": "bodyFormData[0].value"
+      },
+      {
+        "key": "bodyFormData[1].value"
       }
     ],
     "isValid": true,
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "Password.text",
       "Username.text"
     ],
     "userSetOnLoad": false,

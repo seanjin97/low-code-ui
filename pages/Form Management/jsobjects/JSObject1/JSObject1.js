@@ -1,12 +1,8 @@
 export default {
 	DataUpdateRow: async () => {
 		//write code here
-		if (appsmith.store.userObject.permissions === "ADMIN") {
-			await DataUpdateRow.run()
-			await DataGetAll.run()
-		} else {
-			return showAlert("Action not allowed")
-		}
+		await DataUpdateRow.run()
+		await DataGetAll.run()
 	},
 	Logout: async () => {
 		storeValue("userObject", undefined);

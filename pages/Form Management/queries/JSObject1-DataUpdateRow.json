@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  if (appsmith.store.userObject.permissions === \"ADMIN\") {\n    await DataUpdateRow.run();\n    await DataGetAll.run();\n  } else {\n    return showAlert(\"Action not allowed\");\n  }\n}",
+      "body": "async () => {\n  await DataUpdateRow.run();\n  await DataGetAll.run();\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": true
@@ -35,7 +35,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  if (appsmith.store.userObject.permissions === \"ADMIN\") {\n    await DataUpdateRow.run();\n    await DataGetAll.run();\n  } else {\n    return showAlert(\"Action not allowed\");\n  }\n}"
+      "async () => {\n  await DataUpdateRow.run();\n  await DataGetAll.run();\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  if (Username.text && Password.text) {\n    const res = await LOGIN.run();\n    showAlert(`${res.user} logged in successfully`);\n    storeValue(\"userObject\", res);\n    navigateTo(\"Form Management\");\n  }\n}",
+      "body": "async () => {\n  if (Username.text && Password.text) {\n    const res = await LOGIN.run();\n    showAlert(`logged in successfully`);\n    storeValue(\"token\", res.access_token);\n    navigateTo(\"Form Management\");\n  }\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": true
@@ -35,7 +35,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  if (Username.text && Password.text) {\n    const res = await LOGIN.run();\n    showAlert(`${res.user} logged in successfully`);\n    storeValue(\"userObject\", res);\n    navigateTo(\"Form Management\");\n  }\n}"
+      "async () => {\n  if (Username.text && Password.text) {\n    const res = await LOGIN.run();\n    showAlert(`logged in successfully`);\n    storeValue(\"token\", res.access_token);\n    navigateTo(\"Form Management\");\n  }\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

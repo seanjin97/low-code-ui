@@ -25,11 +25,15 @@
         {
           "key": "content-type",
           "value": "application/json"
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer {{appsmith.store.token}}"
         }
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "query GET_ALL_FORMS {\n  forms(order_by: {id: asc}) {\n    id\n    name\n    is_active\n    createdAt\n    updatedAt\n  }\n}\n",
+      "body": "query GET_BY_NAME {\n  forms(where: {name: {_ilike: \"%{{SearchInput.text}}%\"}}) {\n    createdAt\n    id\n    is_active\n    name\n    updatedAt\n  }\n}\n",
       "httpMethod": "POST",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
@@ -48,11 +52,21 @@
       }
     },
     "executeOnLoad": true,
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "headers[1].value"
+      },
+      {
+        "key": "body"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "SearchInput.text",
+      "appsmith.store.token"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],

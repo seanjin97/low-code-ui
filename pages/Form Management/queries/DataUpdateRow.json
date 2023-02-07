@@ -25,6 +25,10 @@
         {
           "key": "content-type",
           "value": "application/json"
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer {{appsmith.store.token}}"
         }
       ],
       "encodeParamsToggle": true,
@@ -51,6 +55,9 @@
     "dynamicBindingPathList": [
       {
         "key": "body"
+      },
+      {
+        "key": "headers[1].value"
       }
     ],
     "isValid": true,
@@ -59,7 +66,8 @@
     "jsonPathKeys": [
       "FormTable.selectedRow.id",
       "FormTable.selectedRow.is_active",
-      "FormTable.selectedRow.name"
+      "FormTable.selectedRow.name",
+      "appsmith.store.token"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

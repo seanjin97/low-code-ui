@@ -25,6 +25,10 @@
         {
           "key": "content-type",
           "value": "application/json"
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer {{appsmith.store.token}}"
         }
       ],
       "encodeParamsToggle": true,
@@ -51,13 +55,17 @@
     "dynamicBindingPathList": [
       {
         "key": "body"
+      },
+      {
+        "key": "headers[1].value"
       }
     ],
     "isValid": true,
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "SearchInput.text"
+      "SearchInput.text",
+      "appsmith.store.token"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
