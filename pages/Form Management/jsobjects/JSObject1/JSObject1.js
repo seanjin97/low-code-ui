@@ -9,6 +9,7 @@ export default {
 		}
 	},
 	Logout: async () => {
+		// HELLO
 		storeValue("userObject", undefined);
 		navigateTo("Login")
 	},
