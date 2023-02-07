@@ -15,6 +15,10 @@
     {
       "id": "Configuration",
       "isDefault": false
+    },
+    {
+      "id": "Common API",
+      "isDefault": false
     }
   ],
   "viewMode": false,
