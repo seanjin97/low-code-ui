@@ -10,6 +10,7 @@ export default {
 	},
 	Logout: async () => {
 		// HELLO
+		console.log(appsmith.store.userObject.permissions);
 		storeValue("userObject", undefined);
 		navigateTo("Login")
 	},
