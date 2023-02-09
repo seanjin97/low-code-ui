@@ -19,6 +19,10 @@
     {
       "id": "Common API",
       "isDefault": false
+    },
+    {
+      "id": "Page1",
+      "isDefault": false
     }
   ],
   "viewMode": false,
@@ -27,7 +31,7 @@
   "color": "#ECECEC",
   "icon": "rose",
   "unpublishedAppLayout": {
-    "type": "FLUID"
+    "type": "DESKTOP"
   },
   "publishedAppLayout": {
     "type": "FLUID"
